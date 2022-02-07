@@ -37,12 +37,6 @@ html {
   font-size: 10px; }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /*font-size: 16px;*/
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
 
 .heading-primary {
@@ -129,3 +123,24 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row .col-1-of-2 {
+    width: calc(100% - 6rem)/2;
+    background-color: orangered;
+    float: left; }
+    .row .col-1-of-2:not(:last-child) {
+      margin-left: 6rem; }
