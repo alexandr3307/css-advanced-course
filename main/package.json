@@ -1,0 +1,40 @@
+{
+  "name": "advanced-css-course",
+  "version": "1.0.0",
+  "description": "Natours - landing page for tours; Trillo - trillo app for searching hotels",
+  "main": "index.js",
+  "scripts": {
+    "watch-nat:sass": "node-sass nat/sass/main.scss nat/css/style.css -w",
+    "devserver-nat": "live-server --open=nat",
+    "start-nat": "npm-run-all --parallel devserver-nat watch-nat:sass",
+
+    "compile-nat:sass": "node-sass nat/sass/main.scss nat/css/style.comp.css",
+    "concat-nat:css": "concat -o nat/css/style.concat.css nat/css/icon-font.css nat/css/style.comp.css",
+    "prefix-nat:css": "postcss --use autoprefixer -b 'last 10 versions' nat/css/style.concat.css -o nat/css/style.prefix.css",
+    "compress-nat:css": "node-sass nat/css/style.prefix.css nat/css/style.css --output-style compressed",
+    "build-nat:css": "npm-run-all compile-nat:sass prefix-nat:css compress-nat:css",
+
+
+
+    "watch-trillo:sass": "node-sass trillo/sass/main.scss trillo/css/style.css -w",
+    "devserver-trillo": "live-server --open=trillo",
+    "start-trillo": "npm-run-all --parallel devserver-trillo watch-trillo:sass",
+
+    "compile-trillo:sass": "node-sass trillo/sass/main.scss trillo/css/style.comp.css",
+    "prefix-trillo:css": "postcss --use autoprefixer -b 'last 10 versions' trillo/css/style.comp.css -o trillo/css/style.prefix.css",
+    "compress-trillo:css": "node-sass trillo/css/style.prefix.css trillo/css/style.css --output-style compressed",
+    "build-trillo:css": "npm-run-all compile-trillo:sass concat-trillo:css prefix-trillo:css compress-trillo:css"
+  },
+  "author": "alexlan",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^9.1.0"
+  },
+  "dependencies": {
+    "concat": "^1.0.3",
+    "postcss": "^8.4.14"
+  }
+}
