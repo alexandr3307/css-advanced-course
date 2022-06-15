@@ -23,7 +23,7 @@
     "compile-trillo:sass": "node-sass trillo/sass/main.scss trillo/css/style.comp.css",
     "prefix-trillo:css": "postcss --use autoprefixer -b 'last 10 versions' trillo/css/style.comp.css -o trillo/css/style.prefix.css",
     "compress-trillo:css": "node-sass trillo/css/style.prefix.css trillo/css/style.css --output-style compressed",
-    "build-trillo:css": "npm-run-all compile-trillo:sass concat-trillo:css prefix-trillo:css compress-trillo:css"
+    "build-trillo:css": "npm-run-all compile-trillo:sass prefix-trillo:css compress-trillo:css"
   },
   "author": "alexlan",
   "license": "ISC",
